@@ -1,6 +1,7 @@
-import { useEffect, useState } from "react"
-import { Link, useNavigate } from "react-router-dom"
+import { useState, useEffect, use } from "react"
+import { useNavigate } from "react-router-dom"
 import logo from "../assets/images/logo.png"
+import { useTheme } from "../context/ThemeContext"
 
 const Login = () => {
   const [password, setPassword] = useState()
@@ -9,6 +10,7 @@ const Login = () => {
   const [showPassword, setShowPassword] = useState(false)
 
   const navigate = useNavigate()
+  const {theme} = useTheme()
 
   const PASS = "pepe123"
 
@@ -17,7 +19,7 @@ const Login = () => {
     if (isLoggedIn === "true") {
       navigate("/chat")
     }
-  }, [navigate])
+  }, [])
 
   const validatePassword = () => {
     setMessage(null)
@@ -44,9 +46,9 @@ const Login = () => {
   }
 
   return (
-    <main className="login-main">
+    <main className= "login-main">
       <img width={100} src={logo} alt="logo de whatsapp" />
-      <h1>Clon de Whatsapp 🎉</h1>
+      <h1>Clon de Whatsapp</h1>
       <form onSubmit={handleSubmit}>
         <label>Contraseña de acceso</label>
         <input
@@ -54,10 +56,7 @@ const Login = () => {
           type={showPassword ? "text" : "password"}
           onChange={(event) => setPassword(event.target.value)}
         />
-        <button
-          onClick={handleShowPassword}
-          type="button"><i className="fa fa-eye" aria-hidden="true"></i>
-        </button>
+        <button onClick={handleShowPassword} type="button"><i className="fa fa-eye" aria-hidden="true"></i></button>
         <button>Acceder</button>
 
         {message && <p style={{ color: "green" }}>{message}</p>}
@@ -66,7 +65,6 @@ const Login = () => {
 
       </form>
       <p className="text-info">Acceso restringido • Contenido privado</p>
-      <p className="text-info">Ir a <Link to="/help">Help</Link></p>
     </main>
   )
 }
