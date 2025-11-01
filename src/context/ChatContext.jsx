@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react"
-import { isRouteErrorResponse } from "react-router-dom"
+import { IsRouteErrorResponse } from "react-router-dom"
 
 const ChatContext = createContext()
 
@@ -88,6 +88,6 @@ const ChatProvider = ({ children }) => {
   )
 }
 
-const useChat = () => useContext(ChatContext)
+const Usechat = () => useContext(ChatContext)
 
-export { useChat,ChatProvider }
+export { Usechat, ChatProvider }
