@@ -10,8 +10,8 @@ const Login = () => {
   const [showPassword, setShowPassword] = useState(false)
 
   const navigate = useNavigate()
-  const {theme} = useTheme()
-
+  const [Theme] = useTheme ()
+  
   const PASS = "pepe123"
 
   useEffect(() => {
