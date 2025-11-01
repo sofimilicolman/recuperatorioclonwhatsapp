@@ -1,4 +1,4 @@
-import { useState, useEffect, use } from "react"
+import { useState, useEffect, } from "react"
 import { useNavigate } from "react-router-dom"
 import logo from "../assets/images/logo.png"
 import { useTheme } from "../context/ThemeContext"
@@ -19,7 +19,7 @@ const Login = () => {
     if (isLoggedIn === "true") {
       navigate("/chat")
     }
-  }, [])
+  }, [navigate])
 
   const validatePassword = () => {
     setMessage(null)
