@@ -6,13 +6,13 @@ import { useTheme } from "../context/ThemeContext"
 const Login = () => {
   const [password, setPassword] = useState()
   const [message, setMessage] = useState()
-  const [error, setError] = useState()
+  const [error, setError]  = useState()
   const [showPassword, setShowPassword] = useState(false)
 
   const navigate = useNavigate()
   const [Theme] = useTheme ()
   
-  const PASS = "pepe123"
+ const PASS = "pepe123"
 
   useEffect(() => {
     const isLoggedIn = localStorage.getItem("isLoggedIn")

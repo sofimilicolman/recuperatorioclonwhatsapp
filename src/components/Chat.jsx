@@ -1,8 +1,8 @@
 import { useState } from "react"
-import { useChat } from "../context/ChatContext"
-import { useTheme } from "../context/ThemeContext"
+import { useChat } from "../context/ChatContext."
+import { useTheme } from "../context/ThemecontextS"
 import { useNavigate } from "react-router-dom"
-useNavigate
+
 
 export default function Chat() {
   const [msg, setMsg] = useState("")
@@ -10,7 +10,7 @@ export default function Chat() {
 
   const { users, selectedUser, setUsers, setSelectedUser } = useChat()
 
-  const { theme, actualizarTema } = useTheme()
+  const { Theme, actualizarTema } = useTheme()
   const navigate = useNavigate()
   const user = users.find(u => u.id === selectedUser)
 
